@@ -4,6 +4,7 @@ public class CubeSpawner : MonoBehaviour
 {
     public GameObject cubePrefab;
     public Transform spawnPosition;
+    public AudioSource sound;
 
     //Spawns a new cube instance at a random position on the X-Z plane.
     public void cubeSpawner()
@@ -13,5 +14,7 @@ public class CubeSpawner : MonoBehaviour
 
         // Instantiate the cubePrefab at the generated random position with no rotation (Quaternion.identity).
         Instantiate(cubePrefab, randomPos, Quaternion.identity);
+
+        sound.Play();
     }
 }
